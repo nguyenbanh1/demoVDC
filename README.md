@@ -11,7 +11,7 @@ Brief explanation about folder structure of project
 Run the project with following below:
 
 + Go into root project
-+ Open terminal and run ./gradlew bootRun
++ Open terminal and run *./gradlew bootRun*.
 
 Tools and Library being used
 + Tool to build is Gradle

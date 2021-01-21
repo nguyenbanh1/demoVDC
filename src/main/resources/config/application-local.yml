@@ -1,0 +1,62 @@
+spring:
+
+  profiles: local
+  jackson:
+    serialization:
+      indent-output: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:db
+    username: sa
+    password:
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: h2
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+    generate-ddl: true
+  h2:
+    console:
+      enabled: true
+      path: /h2_console
+
+security:
+  authentication:
+    jwt:
+      # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+      base64-secret: NmJhNzYzMGIwYTk4MDE2NmI1Y2UzMTg3NGVhMmNlZTk0MjgzYTBiOTJmYjRiYjFjZDIwODE4NGUxMDUyNmE1ODkxZTgwZDdjODJlM2U5NzE5ZWRhZDZmYzM3Y2FhN2RkNGY5NjE2ZTMyNjJlNmMwZWJhMzkyNzQ3MGU0MGQ5MmM=
+      # Token is valid 24 hours
+      token-validity-in-seconds: 86400
+      token-validity-in-seconds-for-remember-me: 2592000
+
+social:
+  facebook:
+    appId: 783641715585366
+    appSecret: 586b53499d0375d233958f2f5bc34f95
+app:
+  domain: http://localhost:8080
+
+http:
+  headers:
+    allowedOrigins:
+      - '*'
+    allowedMethods:
+      - POST
+      - PUT
+      - GET
+      - DELETE
+      - OPTIONS
+    allowedHeaders:
+      - Access-Control-Allow-Headers
+      - Origin
+      - Accept
+      - Authorization
+      - X-Requested-With
+      - Content-Type
+      - Access-Control-Request-Method
+      - Access-Control-Request-Headers
+    maxAge: 3600

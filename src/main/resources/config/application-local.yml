@@ -60,3 +60,5 @@ http:
       - Access-Control-Request-Method
       - Access-Control-Request-Headers
     maxAge: 3600
+server:
+  port: 8081

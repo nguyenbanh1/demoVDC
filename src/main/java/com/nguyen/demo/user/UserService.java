@@ -48,7 +48,7 @@ public class UserService {
         User user = new User();
         user.setEmail(email);
         user.setPassword(passwordEncoder.encode(rawPassword));
-        user.setRoles(Set.of(role));
+//        user.setRoles(Set.of(role));
         User createdUser = userRepository.save(user);
         return UserMapper.INSTANCE.of(createdUser);
     }

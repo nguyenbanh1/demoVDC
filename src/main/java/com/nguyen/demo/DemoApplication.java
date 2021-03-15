@@ -61,7 +61,7 @@ public class DemoApplication {
             UserDto adminUserDto = userService.create(adminRegisterReq);
 
             User admin = userService.getById(adminUserDto.getId());
-            admin.setRoles(Set.of(createdAdminRole, customerRole));
+//            admin.setRoles(Set.of(createdAdminRole, customerRole));
             userRepository.save(admin);
             //Create Customer
             RegisterReq registerReq = new RegisterReq();
@@ -70,7 +70,7 @@ public class DemoApplication {
             UserDto userDto = userService.create(registerReq);
 
             User user = userService.getById(userDto.getId());
-            user.setRoles(Set.of(createdCustomerRole));
+//            user.setRoles(Set.of(createdCustomerRole));
             userRepository.save(user);
 
             //Create Product

@@ -3,9 +3,18 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        step {
-          sh "Hello World"
-        }
+          sh "Build application..."
+      }
+    }
+    stage("test") {
+      steps {
+          sh "Test application"
+      }
+    }
+    
+    stage("deploy") {
+      steps {
+          sh "Deploy application"
       }
     }
   }
